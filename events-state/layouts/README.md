@@ -43,32 +43,32 @@ const products = [{
   name: "Nike Metcon 2",
   price: "130",
   color: "red",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/1.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/1.jpg"
 }, {
   name: "Nike Metcon 2",
   price: "130",
   color: "green",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/2.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/2.jpg"
 }, {
   name: "Nike Metcon 2",
   price: "130",
   color: "blue",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/3.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/3.jpg"
 }, {
   name: "Nike Metcon 2",
   price: "130",
   color: "black",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/4.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/4.jpg"
 }, {
   name: "Nike free run",
   price: "170",
   color: "black",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/7.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/7.jpg"
 }, {
   name: "Nike Metcon 3",
   price: "150",
   color: "green",
-  img: "https://github.com/netology-code/ra16-homeworks/blob/master/events-state/layouts/img/5.jpg"
+  img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/layouts/img/5.jpg"
 }];
 ```
 
