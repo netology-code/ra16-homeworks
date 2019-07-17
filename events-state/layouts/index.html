@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <script type="text/babel" src="./js/Button.js"></script>
+  <script type="text/babel" src="./js/Icon.js"></script>
+  <script type="text/babel" src="./js/IconSwitch.js"></script>
+  <script type="text/babel" src="js/ShopCard.js"></script>
+  <script type="text/babel" src="./js/CardsView.js"></script>
+  <script type="text/babel" src="./js/ShopItem.js"></script>
+  <script type="text/babel" src="./js/ListView.js"></script>
+  <script type="text/babel" src="./js/App.js"></script>
+  <script type="text/babel">
+    const products = [{
+      name: "Nike Metcon 2",
+      price: "130",
+      color: "red",
+      img: "./i/1.jpg"
+    }, {
+      name: "Nike Metcon 2",
+      price: "130",
+      color: "green",
+      img: "./i/2.jpg"
+    }, {
+      name: "Nike Metcon 2",
+      price: "130",
+      color: "blue",
+      img: "./i/3.jpg"
+    }, {
+      name: "Nike Metcon 2",
+      price: "130",
+      color: "black",
+      img: "./i/4.jpg"
+    }, {
+      name: "Nike free run",
+      price: "170",
+      color: "black",
+      img: "./i/7.jpg"
+    }, {
+      name: "Nike Metcon 3",
+      price: "150",
+      color: "green",
+      img: "./i/5.jpg"
+    }];
+
+    const cardsLayout = {
+      xs: 12,
+      sm: 8,
+      md: 6,
+      lg: 4
+    };
+
+    ReactDOM.render(
+      <App layout={cardsLayout} products={products} />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
