@@ -17,7 +17,16 @@ const item = {
 
 // Внутри компонента App
 return (
-  <ShopItemClass item={item} />
+  <div className="container">
+    <div className="background-element">
+    </div>
+    <div className="highlight-window">
+      <div className='highlight-overlay'></div>
+    </div>
+    <div className="window">
+      <ShopItemFunc item={item} />
+    </div>
+  </div>
 )
 ```
 
