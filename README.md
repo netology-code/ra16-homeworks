@@ -12,3 +12,8 @@
 1. [ ] [Redux и Redux Thunk](redux)
 1. [ ] [Redux Observable](observable)
 1. [ ] [Redux Saga](saga)
+
+Полезные ссылки:
+* [требования к домашним работам](requirements.md)
+* [список рекомендуемого ПО](software.md)
+* [инструкция по работе в терминале](terminal.md)
