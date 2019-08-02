@@ -1,0 +1,22 @@
+@url = http://localhost:7777
+
+###
+
+GET {{url}}/messages?from=0
+
+###
+
+GET {{url}}/messages?from=1
+
+###
+
+POST {{url}}/messages
+Content-Type: application/json
+
+{
+    "id": 0,
+    "userId": "5f2d9da0-f624-4309-a598-8ba35d6c4bb6",
+    "content": "То, что было введно в поле ввода"
+}
+
+###
