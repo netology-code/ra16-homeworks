@@ -1,0 +1,19 @@
+@url = http://localhost:7777
+
+###
+
+GET {{url}}/notes
+
+###
+
+POST {{url}}/notes
+Content-Type: application/json
+
+{
+    "id": 0,
+    "content": "First Note"
+}
+
+###
+
+DELETE {{url}}/notes/3
