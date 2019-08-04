@@ -1,6 +1,9 @@
 # TODO
 TODO.md
 
+# Tests
+*.rest
+
 # Logs
 logs
 *.log
