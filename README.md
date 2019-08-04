@@ -6,7 +6,7 @@
 1. [x] [Формы](forms)
 1. [x] [Композиция компонентов](composition)
 1. [x] [Жизненный цикл и работа с HTTP](lifecycle-http)
-1. [ ] [HOC](hoc)
+1. [x] [HOC](hoc)
 1. [ ] [hooks, Context API](context)
 1. [ ] [React Router](router)
 1. [ ] [Redux и Redux Thunk](redux)
