@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Menu</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.2/react-router-dom.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel" src="./js/Menu.js"></script>
+  <script type="text/babel" src="./js/HomePage.js"></script>
+  <script type="text/babel" src="./js/DriftPage.js"></script>
+  <script type="text/babel" src="./js/TimeAttackPage.js"></script>
+  <script type="text/babel" src="./js/ForzaPage.js"></script>
+  <script type="text/babel" src="./js/App.js"></script>
+  <script type="text/babel">
+    const ReactRouter = window.ReactRouterDOM;
+    const Router = ReactRouter.HashRouter;
+    const Route = ReactRouter.Route;
+    const NavLink = ReactRouter.NavLink;
+    const Link = ReactRouter.Link;
+    const Switch = ReactRouter.Switch;
+
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
