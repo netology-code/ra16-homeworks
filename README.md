@@ -14,23 +14,23 @@
 
 ### Блок 2. Продвинутые техники, одностраничные приложения
 
-2.1. [x] [Композиция компонентов](composition)
+2.1. [Композиция компонентов](composition)
 
-2.2. [x] [Жизненный цикл и работа с HTTP](lifecycle-http)
+2.2. [Жизненный цикл и работа с HTTP](lifecycle-http)
 
-2.3. [x] [HOC](hoc)
+2.3. [HOC](hoc)
 
-2.4. [x] [hooks, Context API](hooks-context)
+2.4. [hooks, Context API](hooks-context)
 
-2.5. [x] [React Router](router)
+2.5. [React Router](router)
 
 ### Блок 3. Redux - управление состоянием
 
-3.1. [x] [Redux и Redux Thunk](redux)
+3.1. [Redux и Redux Thunk](redux)
 
-3.2. [x] [Redux Observable](observable)
+3.2. [Redux Observable](observable)
 
-3.3. [x] [Redux Saga](saga)
+3.3. [Redux Saga](saga)
 
 ### Полезные ссылки:
 
