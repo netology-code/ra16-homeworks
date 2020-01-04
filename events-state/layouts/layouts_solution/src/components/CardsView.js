@@ -1,7 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 function CardsView(props) {
+    console.log(props.products);
     return (
         <div>
             
@@ -9,9 +10,9 @@ function CardsView(props) {
     )
 }
 
-CardsView.propTypes = {
+// CardsView.propTypes = {
 
-}
+// }
 
 export default CardsView;
 
