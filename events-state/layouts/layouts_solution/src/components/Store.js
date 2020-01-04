@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import CardsView from './CardsView'
 import IconSwittch from './IconSwittch';
+import ListView from './ListView';
 
 export class Store extends PureComponent {
     constructor(props) {
@@ -54,9 +55,9 @@ export class Store extends PureComponent {
 
     render() {
         return (
-            <div>
+            <div className='wrap'>
                 <IconSwittch name={this.state.icon} onSwitch={this.handleSwitch}/>
-                <CardsView products={this.state.products}/>
+                {this.state.icon === 'view_list' ? <ListView items={this.state.products}/> : <CardsView products={this.state.products} />}
             </div>
         )
     }

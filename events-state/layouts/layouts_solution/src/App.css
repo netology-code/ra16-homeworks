@@ -39,6 +39,19 @@
   }
 }
 
+.card-product {
+  display: inline-block;
+  text-align: center;
+}
+
+.card-image {
+  width: 300px;
+}
+
 .icon {
   text-align: right;
+}
+
+.wrap {
+  display: inline;
 }
