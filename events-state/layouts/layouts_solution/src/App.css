@@ -58,6 +58,23 @@
   text-align: right;
 }
 
+.item {
+  display: inline-block;
+  margin: auto;
+}
+
+.item-product {
+  text-align: left;
+}
+
+.item-product h1, .item-product button {
+  display: inline-block;
+}
+
+.item-image {
+  max-height: 100px;
+}
+
 .wrap {
   display: inline;
 }

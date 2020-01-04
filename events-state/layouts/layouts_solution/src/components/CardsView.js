@@ -6,7 +6,7 @@ function CardsView(props) {
     console.log(props.products);
     return (
         <div className='cards'>
-            {props.products.map((el, index) => <ShopCard product={el} key={index}/>)}
+            {props.cards.map((el, index) => <ShopCard product={el} key={index}/>)}
         </div>
     )
 }

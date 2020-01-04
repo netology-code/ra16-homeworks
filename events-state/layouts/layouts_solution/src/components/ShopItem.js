@@ -3,8 +3,18 @@ import PropTypes from 'prop-types'
 
 function ShopItem(props) {
     return (
-        <div>
-            
+        <div className='item-product'>
+            <img className='item item-image' src={props.product.img} alt={props.product.name}/>
+            <h1 className='item'>
+                {props.product.name}
+            </h1>
+            <span className='item'>
+                {props.product.color}
+            </span>
+            <span className='item'>
+                {props.product.price}
+            </span>
+            <button>Add to card</button>
         </div>
     )
 }
