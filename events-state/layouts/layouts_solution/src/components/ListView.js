@@ -11,7 +11,12 @@ function ListView(props) {
 }
 
 ListView.propTypes = {
-
+    items: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        img: PropTypes.string,
+        color: PropTypes.string,
+        price: PropTypes.string
+    })).isRequired
 }
 
 export default ListView;

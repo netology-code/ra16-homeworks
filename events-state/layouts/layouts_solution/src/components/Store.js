@@ -57,7 +57,7 @@ export class Store extends PureComponent {
         return (
             <div className='wrap'>
                 <IconSwittch name={this.state.icon} onSwitch={this.handleSwitch}/>
-                {this.state.icon === 'view_list' ? <ListView items={this.state.products}/> : <CardsView cards={this.state.products} />}
+                {this.state.icon === 'view_list' ? <CardsView cards={this.state.products} /> : <ListView items={this.state.products}/>}
             </div>
         )
     }

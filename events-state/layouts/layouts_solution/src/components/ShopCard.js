@@ -24,7 +24,10 @@ function ShopCard(props) {
 }
 
 ShopCard.propTypes = {
-
+    name: PropTypes.string,
+    img: PropTypes.string,
+    color: PropTypes.string,
+    price: PropTypes.string
 }
 
 export default ShopCard
