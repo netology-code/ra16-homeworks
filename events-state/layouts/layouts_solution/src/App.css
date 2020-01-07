@@ -41,8 +41,20 @@
 
 .card {
   display: block;
+  text-align: right;
 }
 
+.card-add {
+  margin: 10px 30px 20px 80px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 2px solid tomato;
+  color: tomato;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 .card-product {
   display: inline-block;
   background-color: #f5f5f5;

@@ -17,7 +17,7 @@ CardsView.propTypes = {
         img: PropTypes.string,
         color: PropTypes.string,
         price: PropTypes.string
-    })).isRequired
+    }))
 }
 
 export default CardsView;
