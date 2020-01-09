@@ -8,7 +8,7 @@ const data = Data;
 
 function App() {
   return (
-    <div className="App">
+    <div className="item-list">
       <Listing items={data}/>    
     </div>
   );
