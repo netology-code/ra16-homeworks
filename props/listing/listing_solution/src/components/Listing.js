@@ -21,9 +21,9 @@ function Listing(props) {
 
     return (
         <div>
-            <h1>Hello!</h1>
             {itemsList}
         </div>
+        
     )
 }
 
