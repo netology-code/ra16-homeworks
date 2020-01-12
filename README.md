@@ -26,9 +26,9 @@
 
 ### Блок 3. Redux - управление состоянием
 
-3.1. [Redux](redux) - in progress
+3.1. [Redux](redux)
 
-3.1. [Redux и Redux Thunk](thunk) - in progress
+3.1. [Redux и Redux Thunk](thunk)
 
 3.2. [Redux Observable](observable)
 
