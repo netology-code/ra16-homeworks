@@ -18,7 +18,7 @@ function InputHex(props) {
     return (
         <div>
             <input id="name" name="name" value={form.name} onChange={handleChange} />
-            <HexToRgb hexCode={form.name}/>
+            <HexToRgb hexCode={form.name.length === 7 ? form.name : 0}/>
         </div>
     )
 }
