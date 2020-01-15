@@ -5,11 +5,9 @@ import HexToRgb from './HexToRgb';
 
 function InputHex(props) {
     const [form, setForm] = useState({
-        name: '',
-        score: 'good',
-        agreement: false
+        name: ''
     });
-
+    
     const handleChange = (event) => {
         setForm(prevForm => ({...prevForm, name: event.target.value}));
         event.persist()
@@ -18,7 +16,7 @@ function InputHex(props) {
     return (
         <div className='wrap-main absolute'>
             <div className='wrap-main'>
-                <input id="hexName" name="name" value={form.name} onChange={handleChange} />
+                <input id="hexName" name="name" value={form.name} onChange={handleChange}/>
             </div>
             <HexToRgb hexCode={form.name.length === 7 ? form.name : 0}/>
         </div>
