@@ -3,13 +3,13 @@ import './App.css';
 import InputHex from './components/InputHex';
 
 function Convert(props) {
-    
+
     const handleSubmit = evt => {
       evt.preventDefault();
     }
 
       return (
-        <form onSubmit={handleSubmit}> 
+        <form className='wrap-background' onSubmit={handleSubmit}> 
           <InputHex />
         </form>
       )

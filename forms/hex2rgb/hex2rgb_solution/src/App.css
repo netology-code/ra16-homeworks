@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.wrap-background {
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  height: 100vh;
+}
+
+.absolute {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wrap-main {
+  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.result {
+  border: 1px solid black;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#hexName {
+  border: 1px solid black;
+  display: inline-block;
+  width: 198px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+}

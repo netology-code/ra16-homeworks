@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function HexToRgb(props) {
-    const hexCodeRight = props.hexCode.length === 7 ? props.hexCode : null;
+
     const hexArray = Array.from(props.hexCode);
     let rgb;
     if(hexArray.length === 7 && hexArray[0] === '#') {
@@ -10,16 +10,21 @@ function HexToRgb(props) {
         let g = parseInt(hexArray[3] + hexArray[4], 16);
         let b = parseInt(hexArray[5] + hexArray[6], 16);
 
-        rgb = `${r}, ${g}, ${b}`;
+        rgb = isNaN(r) || isNaN(g) || isNaN(b) ? 'ОШИБКА' : `rgb(${r}, ${g}, ${b})`;
     }
-    console.log(rgb);
+    
+    let newStyle = {
+        backgroundColor: rgb,
+        color: rgb !== 'rgb(255, 255, 255)' ? 'white' : 'black'
+    }
 
     return (
-        <div>
-            <p>
-                {`rgb(${rgb})`}
-            </p>            
+        <div className='wrap-main'>
+            <p className='result' style={rgb === 'ОШИБКА' ? {backgroundColor: 'red', color: 'white'} : newStyle}>
+                {rgb === undefined ? '' : rgb}
+            </p> 
         </div>
+                       
     )
 }
 
