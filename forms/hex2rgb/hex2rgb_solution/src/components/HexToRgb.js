@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function HexToRgb(props) {
+    console.log(props.hexCode)
     const hexArray = Array.from(props.hexCode);
     let rgb;
     if(hexArray.length === 7 && hexArray[0] === '#') {
