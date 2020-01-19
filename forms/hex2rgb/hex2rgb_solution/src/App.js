@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import InputHex from './components/InputHex';
 import HexToRgb from './components/HexToRgb';
 
 function Convert(props) {
@@ -22,16 +21,12 @@ function Convert(props) {
         <div className='wrap-main'>
           <input id="hexName" name="hexCode" type='text'/>
         </div>
-        <HexToRgb hexCode={hexCode.name}/>
+        <HexToRgb hexCode={hexCode.name.length === 7 ? hexCode.name : 'Введите HEX-code'}/>
       </div>
       
       {/* <InputHex /> */}
     </form>
   )
-}
-
-Convert.propTypes = {
-
 }
 
 export default Convert

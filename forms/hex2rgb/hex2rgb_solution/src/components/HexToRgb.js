@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function HexToRgb(props) {
     console.log(props.hexCode)
     const hexArray = Array.from(props.hexCode);
-    let rgb;
+    let rgb = props.hexCode;
     if(hexArray.length === 7 && hexArray[0] === '#') {
         let r = parseInt(hexArray[1] + hexArray[2], 16);
         let g = parseInt(hexArray[3] + hexArray[4], 16);
