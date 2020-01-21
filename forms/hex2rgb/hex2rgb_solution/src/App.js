@@ -23,8 +23,6 @@ function Convert(props) {
         </div>
         <HexToRgb hexCode={hexCode.name.length === 7 ? hexCode.name : 'Введите HEX-code'}/>
       </div>
-      
-      {/* <InputHex /> */}
     </form>
   )
 }
