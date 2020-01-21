@@ -12,6 +12,8 @@ function HexToRgb(props) {
         rgb = isNaN(r) || isNaN(g) || isNaN(b) ? 'ОШИБКА' : `rgb(${r}, ${g}, ${b})`;
         let form = document.querySelector('.wrap-background');
         rgb !== 'ОШИБКА' ? form.setAttribute('style', `background-color: rgba(${r}, ${g}, ${b}, 0.5`) : form.setAttribute('style', 'background-color: rgba(255, 87, 51, 0.5)' )
+    } else {
+        rgb = 'ОШИБКА';
     }
     
     let newStyle = {
