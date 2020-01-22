@@ -45,8 +45,6 @@ function WrapForm(props) {
                 </div>
                 <button className='day'> OK </button>
             </div>
-            {/* <DaySteps /> */}
-            {/* <ListDaysSteps data={form}/> */}
             </form>
             <ul>
                 {days.map( o => 
