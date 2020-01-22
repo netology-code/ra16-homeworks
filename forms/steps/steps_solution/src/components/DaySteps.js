@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function DaySteps(props) {
-    // const inputChange = () => {
-    //     return props.change
-    // }
     return (
         <div className='day-wrap'>
             <div className='day'>
