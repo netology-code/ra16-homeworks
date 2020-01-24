@@ -22,8 +22,17 @@ function WrapForm(props) {
 
     const handleForm = evt => {
         evt.preventDefault();
-        const day = new DayModel(nanoid(), form.date, form.distance);
-        setDays(prevDays => [...prevDays, day]);
+        const checkDay = days.filter(day => day.date === form.date);
+        
+        if(checkDay.length > 0) {
+            const day = new DayModel(nanoid(), checkDay[0].date, `${+form.distance + +checkDay[0].distance}`);
+            handleRemove(checkDay[0].id);
+            setDays(prevDays => [...prevDays, day]);
+        } else {
+            const day = new DayModel(nanoid(), form.date, form.distance);
+            setDays(prevDays => [...prevDays, day]);
+        }
+
         setForm(baseForm);
     }
 
@@ -33,8 +42,8 @@ function WrapForm(props) {
 
     return (
         <React.Fragment>
-            <form onSubmit={handleForm}>
-            <div className='day-wrap'>
+            <form className='input-form' onSubmit={handleForm}>
+            <div className='input-wrap'>
                 <div className='day'>
                     <label htmlFor='name'>Дата (ДД. ММ. ГГ.)</label>
                     <input name='date' value={form.date} onChange={handleChange}/>
@@ -43,18 +52,33 @@ function WrapForm(props) {
                     <label htmlFor='name'>Пройдено км</label>
                     <input name='distance' value={form.distance} onChange={handleChange}/>
                 </div>
-                <button className='day'> OK </button>
+                <button className='day submit-btn'> OK </button>
             </div>
             </form>
-            <ul>
-                {days.map( o => 
-                    <li key={o.id}>
-                        <p>{o.date}</p>
-                        <p>{o.distance}</p>
-                        <button onClick={() => handleRemove(o.id)}>Dlt</button>
-                    </li>
-                )}
-            </ul>
+            <div className='list-wrap'>
+                <div>
+                    <p className='header-info'>Дата (ДД.ММ.ГГ)</p>
+                    <p className='header-info'>Пройдено км</p>
+                    <p className='header-info'>Действия</p>
+                </div>
+                <ul className='days-list'>
+                    {days
+                        .sort((a, b) => {
+                            const date = new Date(a.date.split('.').reverse().join('-'));
+                            const date2 = new Date(b.date.split('.').reverse().join('-'));
+                            return date - date2
+                        })
+                        .reverse()
+                        .map( o => 
+                            <li className='day-info' key={o.id}>
+                                <p className='day-data'>{o.date}</p>
+                                <p className='day-data'>{o.distance}</p>
+                                <button className='day-data delete-btn' onClick={() => handleRemove(o.id)}>✘</button>
+                            </li>
+                        )
+                    }
+                </ul>
+            </div>
         </React.Fragment>
     )
 }

@@ -39,8 +39,89 @@
 
 .day {
   display: inline-block;
+  margin-left: 30px;
 }
 
 .day label, .day input {
   display: block;
+}
+
+.day label {
+  margin-bottom: 10px;
+}
+
+.day input {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 30px;
+  width: 200px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.day:first-child {
+  margin-left: 0px;
+}
+
+.submit-btn {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 35px;
+  width: 50px;
+}
+
+.days-list {
+  display: inline-block;
+  min-height: 50px;
+  max-width: 980px;
+  min-width: 500px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0;
+}
+
+.day-data {
+  display: inline-block;
+  margin-left: 130px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.day-data:first-child {
+  margin-left: 0px;
+}
+
+.day-info {
+  list-style-type: none;
+  text-align: center;
+}
+
+.header-info {
+  display: inline-block;
+  margin-left: 90px;
+}
+
+.header-info:first-child {
+  margin-left: 0px;
+}
+
+.input-wrap {
+  display: inline-block;
+  max-width: 980px;
+  min-width: 500px;
+}
+
+.input-form {
+  margin: 100px 0 50px 0;
+}
+
+.list-wrap {
+  display: inline-block;
+  max-width: 980px;
+  min-width: 500px;
+}
+
+.delete-btn {
+  border: none;
+  background-color: #ffffff;
 }
