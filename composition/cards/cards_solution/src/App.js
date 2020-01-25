@@ -1,6 +1,4 @@
 import React from 'react';
-// import './App.css';
-import Card from './components/Card';
 import CardOne from './components/CardOne';
 import CardTwo from './components/CardTwo';
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Card from './Card';
 
 function CardTwo(props) {
@@ -10,10 +9,6 @@ function CardTwo(props) {
             <Card text={text} title={title}/> 
         </div>
     )
-}
-
-CardTwo.propTypes = {
-
 }
 
 export default CardTwo
