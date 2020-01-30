@@ -10,14 +10,14 @@ function WrapMain(props) {
             </div>
             <div className='search-block'>
                 <nav className='nav_bar'>
-                    <a href={props.link} className='videos'>Видео</a>
-                    <a href={props.link} className='images'>Картинки</a>
-                    <a href={props.link} className='news'>Новости</a>
-                    <a href={props.link} className='maps'>Карты</a>
-                    <a href={props.link} className='market'>Маркет</a>
-                    <a href={props.link} className='translator'>Переводчик</a>
-                    <a href={props.link} className='online'>Эфир</a>
-                    <a href={props.link} className='add'>...ещё</a>
+                    <a href={props.link} className='nav_bar_link'>Видео</a>
+                    <a href={props.link} className='nav_bar_link'>Картинки</a>
+                    <a href={props.link} className='nav_bar_link'>Новости</a>
+                    <a href={props.link} className='nav_bar_link'>Карты</a>
+                    <a href={props.link} className='nav_bar_link'>Маркет</a>
+                    <a href={props.link} className='nav_bar_link'>Переводчик</a>
+                    <a href={props.link} className='nav_bar_link'>Эфир</a>
+                    <a href={props.link} className='nav_bar_link'>...ещё</a>
                 </nav>
                 <input className='search' />
             </div>
