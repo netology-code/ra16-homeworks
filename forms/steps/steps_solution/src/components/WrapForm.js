@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {useState} from 'react'
 import nanoid from 'nanoid'
 import DayModel from './DayModel'
+import List from './List'
 
 function WrapForm(props) {
     const baseForm = {
@@ -55,7 +56,8 @@ function WrapForm(props) {
                 <button className='day submit-btn'> OK </button>
             </div>
             </form>
-            <div className='list-wrap'>
+            <List listDays={days} onRemove={handleRemove}/>
+            {/* <div className='list-wrap'>
                 <div>
                     <p className='header-info'>Дата (ДД.ММ.ГГ)</p>
                     <p className='header-info'>Пройдено км</p>
@@ -78,7 +80,7 @@ function WrapForm(props) {
                         )
                     }
                 </ul>
-            </div>
+            </div> */}
         </React.Fragment>
     )
 }
