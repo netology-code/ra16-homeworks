@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useState} from 'react';
-import DayModel from './DayModel';
-import nanoid from 'nanoid';
+import {useState} from 'react'
 
 function WrapForm(props) {
     const baseForm = {
@@ -16,12 +14,11 @@ function WrapForm(props) {
     
     const days = props.listDays;
 
-    const handleRemove = (id) => {
-        return props.onRemove(id)
-    }
-
-    const handleSetDaysList = (day) => {
-        return props.onSubmit(day)
+    const handleForm = (evt) => {
+        const date = form.date;
+        const distance = form.distance;
+        props.onSubmit(evt, date, distance, days);
+        setForm(baseForm);
     }
 
     const handleChange = evt => {
@@ -29,22 +26,6 @@ function WrapForm(props) {
         setForm(prevForm => ({...prevForm, [name]: value}));
     }
   
-    const handleForm = evt => {
-        evt.preventDefault();
-        const checkDay = days.filter(day => day.date === form.date);
-  
-        if(checkDay.length > 0) {
-            const day = new DayModel(nanoid(), checkDay[0].date, `${+form.distance + +checkDay[0].distance}`);
-            handleRemove(checkDay[0].id);
-            handleSetDaysList(day);
-        } else {
-            const day = new DayModel(nanoid(), form.date, form.distance);
-            handleSetDaysList(day);
-        }
-  
-        setForm(baseForm);
-    }
-
     return (
         <form className='input-form' onSubmit={handleForm}>
         <div className='input-wrap'>
