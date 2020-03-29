@@ -8,6 +8,18 @@
 * используется Appveyor в качестве Continuos Deployment
 * собранная версия frontend выкладывается на GitHub Pages (через Appveyor)
 
+### Appveyor
+
+В файле `.appveyor.yml` нужно строку `  - npx push-dir --dir=dist --branch=gh-pages --force --verbose` заменить на `  - npx push-dir --dir=build --branch=gh-pages --force --verbose`.
+
+### GitHub Pages
+
+Полная информация описана здесь: https://create-react-app.dev/docs/deployment/#github-pages
+
+Вкратце:
+1. Нужно добавить в `package.json` свойство `homepage`, указывающее на вашу страничку (например, `"homepage": "https://coursar.github.io/ra/"`)
+2. Нужно использовать `HashRouter` (если вы используете React Router)
+
 ## Backend
 
 Для backend (если его написание предусмотрено условиями задачи):
