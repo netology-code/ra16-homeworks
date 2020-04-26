@@ -15,14 +15,14 @@ class App extends React.Component {
     this.setState(state => {
       state.watches.push(data)
     })
-    console.log(this.state);
   }
 
   render() {
     return (
       <div className="App">
         <AddWatch handleClick={this.handleClick}/>
-        <WatchTable />
+        <WatchTable allWatches={this.state.watches}/>
+        {console.log(this.state.watches)}
       </div>
     )
   }

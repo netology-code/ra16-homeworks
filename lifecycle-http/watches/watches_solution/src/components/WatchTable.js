@@ -8,7 +8,9 @@ class WatchTable extends React.Component {
     render() {
         return(
             <div>
-                'Добавь часы!'
+               <ul>
+                    
+               </ul>
             </div>
         )
     }

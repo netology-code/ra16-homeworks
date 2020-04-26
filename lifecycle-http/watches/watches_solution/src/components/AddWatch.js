@@ -28,7 +28,6 @@ class AddWatch extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return(
             <form className='add-block' onSubmit={this.handleSubmit}>
                 <div className='wrap'>
