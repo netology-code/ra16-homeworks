@@ -6,22 +6,16 @@ import WatchTable from './components/WatchTable';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = [
-      {
-        name: '',
-        timeZone: 0
-      }
-    ]
+    this.state = {watches:[]};
     
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(event) {
-    event.preventDefault();
+  handleClick(data) {
     this.setState(state => {
-      state.push(this.state)
+      state.watches.push(data)
     })
-    console.log(this.state)
+    console.log(this.state);
   }
 
   render() {

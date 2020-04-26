@@ -5,21 +5,32 @@ class AddWatch extends React.Component {
         super(props)
         this.state = {
             name:'',
-            timeZone: 0
+            timeZone: ''
         }
 
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(this.state)
     }
+
+    handleSubmit(event) {
+        this.props.handleClick(this.state);
+        this.setState({
+            name: '',
+            timeZone: ''
+        })
+        event.preventDefault();
+    }
+
     render() {
+        console.log(this.state)
         return(
-            <form className='add-block' onSubmit={this.props.handleClick}>
+            <form className='add-block' onSubmit={this.handleSubmit}>
                 <div className='wrap'>
                     <label>Название</label>
                     <input name='name' value={this.state.name} onChange={this.handleChange}/>
