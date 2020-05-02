@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+li {
+  list-style-type: none;
+} 
+
 .wrap {
   display: inline-block;
   margin-right: 20px;
@@ -35,6 +39,25 @@
 
 .wrap *{
   display: block;
+}
+
+.watch *{
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.watch-name {
+  font-weight: bold;
+}
+
+.watch .watch-mode span {
+  margin-right: 1px;
+}
+
+.watch button {
+  border: none;
+  background-color: #ffffff;
+  padding: 0;
 }
 
 @keyframes App-logo-spin {

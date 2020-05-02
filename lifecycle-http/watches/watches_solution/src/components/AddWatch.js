@@ -1,9 +1,11 @@
 import React from 'react';
+import {nanoid} from 'nanoid';
 
 class AddWatch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            id: '',
             name:'',
             timeZone: ''
         }
@@ -19,8 +21,10 @@ class AddWatch extends React.Component {
     }
 
     handleSubmit(event) {
-        this.props.handleClick(this.state);
+        const id = nanoid();
+        this.props.handleClick(this.state, id);
         this.setState({
+            id: '',
             name: '',
             timeZone: ''
         })
