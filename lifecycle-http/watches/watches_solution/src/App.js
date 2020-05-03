@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './Clock.css';
 import AddWatch from './components/AddWatch';
 import WatchTable from './components/WatchTable';
 
@@ -28,7 +27,7 @@ class App extends React.Component {
         <AddWatch handleClick={this.handleClick}/>
         <div>
           <ul>
-            {this.state.watches.map(el => <WatchTable id={el.id} country={el.name} timeZone={el.timeZone} onRemove={this.handleRemove}/>)}
+            {this.state.watches.map(el => <li key={el.id} className='watch'><WatchTable country={el.name} timeZone={el.timeZone} onRemove={this.handleRemove} id={el.id}/></li>)}
           </ul>
         </div>
       </div>

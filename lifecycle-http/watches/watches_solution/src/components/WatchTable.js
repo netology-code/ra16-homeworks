@@ -1,7 +1,4 @@
 import React from 'react';
-// import moment from 'moment';
-// import '../Clock.css'
-// import ClockModel from './ClockModel';
 
 class WatchTable extends React.Component {
     constructor(props) {
@@ -20,17 +17,16 @@ class WatchTable extends React.Component {
     }
     
     render() {
-        console.log(this.props.id)
         return(
-            <li key={this.props.id} className='watch'>
+            <div>
                 <p className='watch-name'>{this.props.country}</p>
                 <p className='watch-mode'>
-                    <span>{this.state.hours + +this.props.timeZone} :</span>
-                    <span>{this.state.minutes} :</span>
+                    <span>{this.state.hours + +this.props.timeZone < 10 ? '0' + `${this.state.hours + +this.props.timeZone}` : this.state.hours + +this.props.timeZone} :</span>
+                    <span>{this.state.minutes < 10 ? '0' + `${this.state.minutes}` : this.state.minutes} :</span>
                     <span>{this.state.seconds < 10 ? '0' + `${this.state.seconds}` : this.state.seconds}</span>
                 </p>
                 <button onClick={() => this.handleRemove(this.props.id)}>✘</button>
-            </li>
+            </div>
         )
     }
 
