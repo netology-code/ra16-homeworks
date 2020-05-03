@@ -12,7 +12,6 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
   }
-  // const [watches, setWatches] = useState([])
 
   handleClick(data, id) {
     data.id = id;
@@ -32,7 +31,6 @@ class App extends React.Component {
             {this.state.watches.map(el => <WatchTable id={el.id} country={el.name} timeZone={el.timeZone} onRemove={this.handleRemove}/>)}
           </ul>
         </div>
-        {/* <WatchTable allWatches={this.state.watches} onRemove={this.handleRemove}/> */}
       </div>
     ) 
   }

@@ -22,15 +22,15 @@ class WatchTable extends React.Component {
     render() {
         console.log(this.props.id)
         return(
-            <li className='watch' key={this.props.id}>
-            <p className='watch-name'>{this.props.country}</p>
-            <p className='watch-mode'>
-                <span>{this.state.hours + +this.props.timeZone}</span>
-                :<span>{this.state.minutes}</span>
-                :<span>{this.state.seconds < 10 ? '0' + `${this.state.seconds}` : this.state.seconds}</span>
-            </p>
-            <button onClick={() => this.handleRemove(this.props.id)}>✘</button>
-        </li>
+            <li key={this.props.id} className='watch'>
+                <p className='watch-name'>{this.props.country}</p>
+                <p className='watch-mode'>
+                    <span>{this.state.hours + +this.props.timeZone} :</span>
+                    <span>{this.state.minutes} :</span>
+                    <span>{this.state.seconds < 10 ? '0' + `${this.state.seconds}` : this.state.seconds}</span>
+                </p>
+                <button onClick={() => this.handleRemove(this.props.id)}>✘</button>
+            </li>
         )
     }
 
@@ -43,12 +43,6 @@ class WatchTable extends React.Component {
                 seconds: currentTime.getSeconds()
             })
         }, 1000)
-    }
-
-    componentDidUpdate(prevState) {
-    //    if(this.state.seconds === 30) {
-    //         clearInterval(this.interval)
-    //    }
     }
 
     componentWillUnmount() {
