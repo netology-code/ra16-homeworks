@@ -4,7 +4,6 @@ import AddWatch from './components/AddWatch';
 import WatchTable from './components/WatchTable';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {watches: []}

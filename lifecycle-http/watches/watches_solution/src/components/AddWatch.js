@@ -21,7 +21,7 @@ class AddWatch extends React.Component {
     }
 
     handleSubmit(event) {
-        const id = nanoid();
+        const id = nanoid(); //Math.floor(10000*Math.random());
         this.props.handleClick(this.state, id);
         this.setState({
             id: '',
