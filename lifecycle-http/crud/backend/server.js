@@ -9,7 +9,7 @@ const app = new Koa();
 app.use(cors());
 app.use(koaBody({json: true}));
 
-const notes = [];
+const notes = ['userOne'];
 let nextId = 1;
 
 const router = new Router();
