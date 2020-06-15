@@ -68,7 +68,7 @@ const messages = [{
 
 // в компоненте App:
 return (
-  <dv className="clearfix container">
+  <div className="clearfix container">
     <div className="chat">
       <div className="chat-history">
         <MessageHistory list={messages} />
