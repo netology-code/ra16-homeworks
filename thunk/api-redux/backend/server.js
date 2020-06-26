@@ -59,7 +59,7 @@ router.post('/api/services', async (ctx, next) => {
         return fortune(ctx, null, 204);
     }
     
-    services.push({ ...ctx.request.body, nextId++ });
+    services.push({ ...ctx.request.body, id: nextId++ });
     const status = 204;
     return fortune(ctx, null, status);
 });
