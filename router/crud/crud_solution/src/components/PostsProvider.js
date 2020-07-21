@@ -1,28 +1,24 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
-import PropTypes from 'prop-types'
 import PostContext from './PostContext'
+import {useState, useEffect} from 'react'
 
 function PostsProvider(props) {
     
-    const posts = props.posts;
+    // const posts = props.posts;
+    const [posts, setPosts] = useState()
 
-    // function handleFetch() {
-    //       fetch('http://localhost:7777/posts')
-    //         .then(resp => resp.json())
-    //         .then(data => {
-    //             setPosts(data)
-    //             console.log(data)
-    //             console.log('This is work...')
-    //         })
-    //     }
-      
-    //     useEffect(() => {
-    //       handleFetch();
-    //     }, [])
-    
+    useEffect(() => {
+        fetch('http://localhost:7777/posts')
+        .then(resp => resp.json())
+        .then(data => {
+            setPosts(data)
+        })
+    }, [])
+
     return (
-        <PostContext.Provider value={posts}>
+        <PostContext.Provider value={{
+            response: posts
+        }} >
             {props.children}
         </PostContext.Provider>
     )

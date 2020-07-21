@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function NewPost(props) {
 
-    const [state, setState] = useState()
-    
-    function handleFetch() {
-        props.fetch();
-        console.log('Im work')
-    }
+    const [state, setState] = useState();
 
     function handlePublic() {
         const data = {"id": 0, "content": `${state}`}
@@ -20,8 +15,6 @@ export default function NewPost(props) {
             body: JSON.stringify(data)
         })
         setState('');
-
-        handleFetch()
     }
 
     function handleChange(event) {

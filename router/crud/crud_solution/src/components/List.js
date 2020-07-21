@@ -1,10 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import PostContext from './PostContext';
 
 export default function List() {
-    
-    const posts = useContext(PostContext)
+    const [posts, setPosts] = useState()
+    // const posts = useContext(PostContext).response;
+
+    useEffect(() => {
+        fetch('http://localhost:7777/posts')
+        .then(resp => resp.json())
+        .then(data => {
+            setPosts(data)
+        })
+    }, [])
 
     return (
         <div>
