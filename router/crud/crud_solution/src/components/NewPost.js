@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function NewPost() {
+export default function NewPost(props) {
+
+    const [state, setState] = useState()
+    
+    function handleFetch() {
+        props.fetch();
+        console.log('Im work')
+    }
+
+    function handlePublic() {
+        const data = {"id": 0, "content": `${state}`}
+        fetch('http://localhost:7777/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        setState('');
+
+        handleFetch()
+    }
+
+    function handleChange(event) {
+        setState(event.target.value)
+    }
+
     return (
         <div>
             <nav>
@@ -12,9 +38,13 @@ export default function NewPost() {
                 <Link exact='true' to='/' className='close'>X</Link>
             </nav>
             <div className='field'>
-
+                <input type="text" onChange={handleChange}/>
             </div>
-            <button className='post'>Опубликовать</button>
+            <button className='post'onClick={handlePublic}>
+                <Link exact='true' to='/' className='close'>
+                    Опубликовать
+                </Link>
+            </button>
         </div>
     )
 }
