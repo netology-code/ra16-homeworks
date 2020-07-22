@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function NewPost(props) {
+export default function NewPost() {
 
     const [state, setState] = useState();
 

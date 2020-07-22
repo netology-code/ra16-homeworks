@@ -12,11 +12,6 @@ function App() {
 
   useEffect(() => {
     handleFetch()
-    // fetch('http://localhost:7777/posts')
-    //   .then(resp => resp.json())
-    //   .then(data => {
-    //     setPosts(data)
-    //   })
   })
  
   function handleFetch() {
@@ -32,7 +27,7 @@ function App() {
       <PostsProvider posts={posts}>
         <Router>
           <Route exact path='/posts/new' component={NewPost} />
-          <Route exact path='/' render={(props) => <List {...props} fetch={handleFetch}/>} />
+          <Route exact path='/' component={List}/>
           <Route exact path='/posts/:id([0-9]+)' component={View} />
         </Router>
       </PostsProvider>

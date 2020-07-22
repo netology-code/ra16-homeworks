@@ -1,25 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import PostContext from './PostContext';
 
-export default function List(props) {
-    // const [posts, setPosts] = useState()
+export default function List() {
+   
     const posts = useContext(PostContext);
-    const handleFetch = () => {
-        props.fetch()
-    }
-
-    // useEffect(() => {
-    //     handleFetch()
-    // }, )
-    // useEffect(() => {
-    //     fetch('http://localhost:7777/posts')
-    //     .then(resp => resp.json())
-    //     .then(data => {
-    //         setPosts(data)
-    //     })
-    // }, [])
-
+    
     return (
         <div>
             <div className="create-button">
