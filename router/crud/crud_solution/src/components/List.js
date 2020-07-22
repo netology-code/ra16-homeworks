@@ -2,17 +2,23 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import PostContext from './PostContext';
 
-export default function List() {
-    const [posts, setPosts] = useState()
-    // const posts = useContext(PostContext).response;
+export default function List(props) {
+    // const [posts, setPosts] = useState()
+    const posts = useContext(PostContext);
+    const handleFetch = () => {
+        props.fetch()
+    }
 
-    useEffect(() => {
-        fetch('http://localhost:7777/posts')
-        .then(resp => resp.json())
-        .then(data => {
-            setPosts(data)
-        })
-    }, [])
+    // useEffect(() => {
+    //     handleFetch()
+    // }, )
+    // useEffect(() => {
+    //     fetch('http://localhost:7777/posts')
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         setPosts(data)
+    //     })
+    // }, [])
 
     return (
         <div>

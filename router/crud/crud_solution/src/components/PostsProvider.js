@@ -4,21 +4,19 @@ import {useState, useEffect} from 'react'
 
 function PostsProvider(props) {
     
-    // const posts = props.posts;
-    const [posts, setPosts] = useState()
+    const posts = props.posts;
+    // const [posts, setPosts] = useState()
 
-    useEffect(() => {
-        fetch('http://localhost:7777/posts')
-        .then(resp => resp.json())
-        .then(data => {
-            setPosts(data)
-        })
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:7777/posts')
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         setPosts(data)
+    //     })
+    // }, [])
 
     return (
-        <PostContext.Provider value={{
-            response: posts
-        }} >
+        <PostContext.Provider value={posts} >
             {props.children}
         </PostContext.Provider>
     )
