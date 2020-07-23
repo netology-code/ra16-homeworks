@@ -1,16 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-function Edit(props) {
+function Edit({match}) {
+
     return (
         <div>
-            
+            <Link exact='true' to={`/posts/${match.params.id}`} className='close'>
+                <button>Cloed</button>
+            </Link>
         </div>
     )
-}
-
-Edit.propTypes = {
-
 }
 
 export default Edit

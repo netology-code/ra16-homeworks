@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import PostConstext from './PostContext'
 
 export default function View({match}) {
@@ -24,7 +24,7 @@ export default function View({match}) {
         <div>
             <p>{post ? post.content : 'Not found'}</p>
             <Link exact='true' to='/' className='close'>X</Link>
-            <button>Изменить</button>
+            <Link exact='true' to={`/edit/${match.params.id}`}>Изменить</Link>
             <Link exact='true' to='/' className='close'>
                 <button onClick={handleDelet}>Удалить</button>
             </Link>
