@@ -5,7 +5,6 @@ import PostContext from './PostContext';
 export default function List() {
    
     const posts = useContext(PostContext);
-    
     return (
         <div>
             <div className="create-button">

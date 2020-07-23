@@ -10,19 +10,15 @@ import PostsProvider from './components/PostsProvider'
 
 function App() {
   const [posts, setPosts] = useState()
-
+  
   useEffect(() => {
-    handleFetch()
-  })
- 
-  function handleFetch() {
     fetch('http://localhost:7777/posts')
     .then(resp => resp.json())
     .then(data => {
-      setPosts(data)
+      setPosts(data);
     })
-  }
-
+  }, [])
+  
   return (
     <div className="App">
       <PostsProvider posts={posts}>

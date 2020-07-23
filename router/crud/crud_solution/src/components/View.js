@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PostConstext from './PostContext'
 
 export default function View({match}) {
