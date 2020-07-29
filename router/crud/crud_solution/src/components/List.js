@@ -4,13 +4,14 @@ import PostContext from './PostContext';
 
 export default function List() {
    
-    const posts = useContext(PostContext);
+    const allPosts = useContext(PostContext);
+    console.log(useContext(PostContext))
     return (
         <div>
             <div className="create-button">
                 <Link exact='true' to='/posts/new'>Созадть пост</Link>
             </div>
-            {posts ? posts.map((el, index) => <Link exact='true' to={`/posts/${el.id}`} key={index}><p>{el.content}</p></Link>) : null}
+            {allPosts ? allPosts.map((el, index) => <Link exact='true' to={`/posts/${el.id}`} key={index}><p>{el.content}</p></Link>) : null}
         </div>
     )
 }

@@ -4,10 +4,10 @@ import PostConstext from './PostContext'
 
 export default function View({match}) {
     
-    const posts = useContext(PostConstext);
+    const allPosts = useContext(PostConstext);
     const currentId = +match.params.id
     
-    const post = posts.find(o => 
+    const post = allPosts.find(o => 
         o.id === currentId
     )
     

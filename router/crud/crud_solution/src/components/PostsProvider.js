@@ -1,8 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PostContext from './PostContext'
 
 function PostsProvider(props) {
-    
     const posts = props.posts;
     
     return (

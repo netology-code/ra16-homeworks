@@ -15,6 +15,7 @@ function Edit({match}) {
             },
             body: JSON.stringify(data)
         })
+        setPost('')
         console.log(post)
     }
 
