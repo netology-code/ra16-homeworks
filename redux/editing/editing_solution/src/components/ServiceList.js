@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import {removeService, changeServiceField} from '../actions/actionCreators';
+import {removeService, changeServiceField, addService} from '../actions/actionCreators';
 import PropTypes from 'prop-types'
 
 function ServiceList(props) {
@@ -11,8 +11,8 @@ function ServiceList(props) {
         dispatch(removeService(id))
     }
 
-    const handleEdit = (name, price) => {
-       
+    const handleEdit = () => {
+        
     }
 
     return (
@@ -20,7 +20,7 @@ function ServiceList(props) {
             {items.map(o => <li key={o.id}>
                 {o.name}{o.price}
                 <button onClick={() => handleRemove(o.id)}>X</button>
-                <button onClick={() => handleEdit(o.name, o.price)}>Edit</button>
+                <button onClick={() => handleEdit()}>Edit</button>
                 </li>)}
         </ul>
     )
