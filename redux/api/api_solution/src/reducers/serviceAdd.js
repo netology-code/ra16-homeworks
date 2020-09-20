@@ -1,18 +1,26 @@
-import {CHANGE_SERVICE_FIELD, ADD_SERVICE, EDITTING_SERVICE} from '../actions/actionTypes'
+import {CHANGE_SERVICE_FIELD, EDITTING_SERVICE, ADD_SERVICE_SUCCESS, ADD_SERVICE_REQUEST, ADD_SERVICE_ERROR} from '../actions/actionTypes'
 
 const initialState = {
-    name: '',
-    price: '',
-    id: ''
+    items: {
+        name: '',
+        price: ''
+    },
+    loading: false,
+    error: null
 };
 
 export default function serviceAddReducer (state = initialState, action) {
     switch (action.type) {
         case CHANGE_SERVICE_FIELD:
             const {name, value} = action.payload;
-            return {...state, [name]: value};
-        case ADD_SERVICE: 
+            return {...state, items:{[name]: value}};
+        case ADD_SERVICE_SUCCESS: 
             return {...initialState}
+        case ADD_SERVICE_REQUEST:
+            return {...state, loading: true, error: null}
+        case ADD_SERVICE_ERROR:
+            const {error} = action.payload;
+            return {...state, loading: false, error}
         default:
             return state;
     }

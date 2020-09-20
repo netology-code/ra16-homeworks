@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {changeServiceField, addService, edittingService} from '../actions/actionCreators'
+import {changeServiceField, addServiceSuccess, edittingService, fetchServicesSuccess} from '../actions/actionCreators'
 import PropTypes from 'prop-types'
 
 function ServiceAdd(props) {
-    const items = useSelector(state => state.serviceAdd);
+    const {items} = useSelector(state => state.serviceAdd);
     
     const dispatch = useDispatch();
 
@@ -13,9 +13,15 @@ function ServiceAdd(props) {
         dispatch(changeServiceField(name, value))
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        
+         await fetch(process.env.REACT_APP_API_URL, {
+            method: 'POST',
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(items)
+        })
+        fetchServicesSuccess(dispatch);
+        dispatch(addServiceSuccess());
     }
 
     return (

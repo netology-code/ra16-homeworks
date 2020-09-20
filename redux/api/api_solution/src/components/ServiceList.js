@@ -10,7 +10,7 @@ export  const fetchhendler = async (dispatch) => {
 }
 
 function ServiceList(props) {
-    const items  = useSelector(state => state.serviceList);
+    const {items, loading, error}  = useSelector(state => state.serviceList);
     
     const dispatch = useDispatch();
 
