@@ -18,13 +18,16 @@ function ServiceList(props) {
     }
 
     return (
-        <ul>
+        <div>
+            <input type="text" />
+            <ul>
             {items.map(o => <li key={o.id}>
                 {o.name}{o.price}
                 <button onClick={() => handleRemove(o.id)}>X</button>
                 <button onClick={() => handleEdit(o.name, o.price, o.id)}>Edit</button>
                 </li>)}
-        </ul>
+            </ul>
+        </div>
     )
 }
 
