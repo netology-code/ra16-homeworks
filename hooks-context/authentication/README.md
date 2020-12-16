@@ -9,7 +9,7 @@ Authentication
 
 ![](./assets/unauthenticated.png)
 
-2. После авторизации (POST http://localhost:7070/auth `{"login": "vasya", "password": "vasya"}`), загружаются компонент ленты новостей и в тулбаре отображается профиль с кнопкой выйти:
+2. После авторизации (POST http://localhost:7070/auth `{"login": "vasya", "password": "password"}`), загружаются компонент ленты новостей и в тулбаре отображается профиль с кнопкой выйти:
 
 ![](./assets/authenticated.png)
 
