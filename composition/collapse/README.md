@@ -1,9 +1,9 @@
 Collapse
 ===
 
-Вам поручено реализовать аналог компонента Collapse (https://digital.alfabank.ru/components/collapse).
+Вам поручено реализовать аналог компонента Collapse (https://getbootstrap.com/docs/5.0/components/collapse/#example).
 
-Обратите ключевое внимание на следующие `props`:
+Используйте следующие props:
 * `collapsedLabel`
 * `expandedLabel`
 
