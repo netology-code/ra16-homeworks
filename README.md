@@ -28,7 +28,7 @@
 
 3.1. [Redux](redux)
 
-3.1. [Redux и Redux Thunk](thunk)
+3.1. [Redux Toolkit](thunk)
 
 3.2. [Redux Observable](observable)
 
