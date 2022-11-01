@@ -26,7 +26,7 @@ COMMAND  PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
 node    7377 student   21u  IPv6 7523278      0t0  TCP *:7777 (LISTEN)
 ```
 
-7777 — номер порта, 7377 — номер процесса
+7777 — номер порта, 7377 — номер процесса.
 
 Процесс можно завершить с помощью команды:
 ```sh
@@ -46,7 +46,7 @@ COMMAND  PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
 node    7377 student   21u  IPv6 7523278      0t0  TCP *:7777 (LISTEN)
 ```
 
-7777 — номер порта, 7377 — номер процесса
+7777 — номер порта, 7377 — номер процесса.
 
 Процесс можно завершить с помощью команды:
 ```sh
