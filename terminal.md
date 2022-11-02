@@ -53,7 +53,7 @@ https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
 
 ### Linux
 
-В Linux достаточно щёлкнуть правой кнопкой мыши на каталоге и выбрать пункт меню `Open in Terminal` или `Открыть в терминале`:
+В Linux достаточно щёлкнуть правой кнопкой мыши на каталоге и выбрать пункт меню `Open in Terminal`, или `Открыть в терминале`:
 
 ![](./pic/linux.png)
 
