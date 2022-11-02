@@ -98,7 +98,7 @@ https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration
 
 > **Важно:** несмотря на то, что в Windows 10 командные оболочки нормально поддерживают `/` вместо `\ `, мы будем использовать для Windows синтаксис с `\ `.
 
-Например, в Git Bash для Windows абсолютный путь для каталога `Program Files`, будет чаще всего выглядеть следующим образом: `/c/Program Files/`, а в Cmd — `C:\Program Files\ `.
+Например, в Git Bash для Windows абсолютный путь для каталога `Program Files` будет чаще всего выглядеть следующим образом: `/c/Program Files/`, а в Cmd — `C:\Program Files\ `.
 
 Для домашнего каталога в Ubuntu на Linux абсолютный путь будет выглядеть следующим образом: `/home/user/`, где `user` — имя пользователя.
 
