@@ -18,7 +18,7 @@
 ## Подсказки
 
 1. Разместите с помощью CSS блок "Click to select" над `<input type="file" />` и установите этому блоку `pointer-events: none;`, чтобы вызывать окошко выбора файлов при клике.
-1. Используйте следующую заготовку, для получения DataUrl:
+1. Используйте следующую заготовку для получения DataUrl:
 ```js
 const fileToDataUrl = file => {
   return new Promise((resolve, reject) => {
