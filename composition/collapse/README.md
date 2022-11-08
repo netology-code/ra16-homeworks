@@ -1,7 +1,7 @@
 Collapse
 ===
 
-Вам поручено реализовать аналог компонента Collapse (https://getbootstrap.com/docs/4.0/components/collapse/#example).
+Вам поручено реализовать аналог компонента [Collapse](https://getbootstrap.com/docs/5.0/components/collapse/#example).
 
 Обратите ключевое внимание на следующие `props`:
 * `collapsedLabel`
