@@ -17,16 +17,16 @@
 В терминале запустите команды:
 ```sh
 sudo apt-get install lsof
-lsof -i :7777
+lsof -i :7070
 ```
 
 Вывод будет выглядеть вот так
 ```
 COMMAND  PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
-node    7377 student   21u  IPv6 7523278      0t0  TCP *:7777 (LISTEN)
+node    7377 student   21u  IPv6 7523278      0t0  TCP *:7070 (LISTEN)
 ```
 
-7777 — номер порта, 7377 — номер процесса.
+7070 — номер порта, 7377 — номер процесса.
 
 Процесс можно завершить с помощью команды:
 ```sh
@@ -37,16 +37,16 @@ sudo kill -9 7377
 
 В терминале запустите команду:
 ```sh
-$ lsof -i :7777
+$ lsof -i :7070
 ```
 
 Вывод будет выглядеть вот так:
 ```
 COMMAND  PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
-node    7377 student   21u  IPv6 7523278      0t0  TCP *:7777 (LISTEN)
+node    7377 student   21u  IPv6 7523278      0t0  TCP *:7070 (LISTEN)
 ```
 
-7777 — номер порта, 7377 — номер процесса.
+7070 — номер порта, 7377 — номер процесса.
 
 Процесс можно завершить с помощью команды:
 ```sh
