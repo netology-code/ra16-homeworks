@@ -27,14 +27,6 @@ app.get("/posts/:id", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-  const { id, content } = req.body;
-
-  if (id !== 0) {
-    posts = posts.map((o) => (o.id !== id ? o : { ...o, content: content }));
-    res.status(204);
-    return res.end();
-  }
-
   posts.push({ ...req.body, id: nextId++, created: Date.now() });
   res.status(204);
   res.end();
