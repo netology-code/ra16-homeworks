@@ -1,42 +1,39 @@
-const http = require('http');
-const Koa = require('koa');
-const Router = require('koa-router');
-const cors = require('koa2-cors');
-const koaBody = require('koa-body');
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
 
-const app = new Koa();
+const app = express();
 
 app.use(cors());
-app.use(koaBody({json: true}));
+app.use(
+  bodyParser.json({
+    type(req) {
+      return true;
+    },
+  })
+);
 
 const messages = [];
 let nextId = 1;
 
-const router = new Router();
+app.get("/messages", async (req, res) => {
+  const from = Number(req.query.from);
+  if (req.query.from === 0) {
+    return res.send(JSON.stringify(messages));
+  }
 
-router.get('/messages', async (ctx, next) => {
-    const from = Number(ctx.request.query.from)
-    if (ctx.request.query.from === 0) {
-        ctx.response.body = messages;
-        return;
-    }
-
-    const fromIndex = messages.findIndex(o => o.id === from);
-    if (fromIndex === -1) {
-        ctx.response.body = messages;
-        return;
-    }
-
-    ctx.response.body = messages.slice(fromIndex + 1);
+  const fromIndex = messages.findIndex((o) => o.id === from);
+  if (fromIndex === -1) {
+    return res.send(JSON.stringify(messages));
+  }
+  return res.send(JSON.stringify(messages.slice(fromIndex + 1)));
 });
 
-router.post('/messages', async(ctx, next) => {
-    messages.push({...ctx.request.body, id: nextId++});
-    ctx.response.status = 204;
+app.post("/messages", (req, res) => {
+  messages.push({ ...req.body, id: nextId++ });
+  res.status(204);
+  res.end();
 });
 
-app.use(router.routes()).use(router.allowedMethods());
-
-const port = process.env.PORT || 7777;
-const server = http.createServer(app.callback());
-server.listen(port, () => console.log('server started'));
+const port = process.env.PORT || 7070;
+app.listen(port, () => console.log(`The server is running on port ${port}.`));

@@ -1,96 +1,122 @@
-const http = require('http');
-const Koa = require('koa');
-const Router = require('koa-router');
-const cors = require('koa2-cors');
-const koaBody = require('koa-body');
-const passport = require('koa-passport');
-const { Strategy } = require('passport-http-bearer');
-const uuid = require('uuid');
-const bcrypt = require('bcrypt');
-const faker = require('faker');
+import passport from "passport";
+import { Strategy } from "passport-http-bearer";
+import bcrypt from "bcrypt";
+import faker from "faker";
+import express from "express";
+import * as uuid from "uuid";
+import cors from "cors";
+import bodyParser from "body-parser";
 
-const app = new Koa();
+const app = express();
+
 app.use(cors());
-app.use(koaBody());
+app.use(
+  bodyParser.json({
+    type(req) {
+      return true;
+    },
+  })
+);
 
 const tokens = new Map();
 const users = new Map();
 const rounds = 10;
 
-users.set('vasya', { id: uuid.v4(), login: 'vasya', name: 'Vasya', password: bcrypt.hashSync('password', rounds), avatar: 'https://i.pravatar.cc/40' });
+users.set("vasya", {
+  id: uuid.v4(),
+  login: "vasya",
+  name: "Vasya",
+  password: bcrypt.hashSync("password", rounds),
+  avatar: "https://i.pravatar.cc/40",
+});
 
 const news = [
-    {
-        id: uuid.v4(),
-        title: faker.lorem.words(),
-        image: 'https://placeimg.com/640/480/nature',
-        content: faker.lorem.paragraph(),
-    },
-    {
-        id: uuid.v4(),
-        title: faker.lorem.words(),
-        image: 'https://placeimg.com/640/480/arch',
-        content: faker.lorem.paragraph(),
-    },
-    {
-        id: uuid.v4(),
-        title: faker.lorem.words(),
-        image: 'https://placeimg.com/640/480/tech',
-        content: faker.lorem.paragraph(),
-    },
-    {
-        id: uuid.v4(),
-        title: faker.lorem.words(),
-        image: 'https://placeimg.com/640/480/sepia',
-        content: faker.lorem.paragraph(),
-    },
+  {
+    id: uuid.v4(),
+    title: faker.lorem.words(),
+    image: "https://placeimg.com/640/480/nature",
+    content: faker.lorem.paragraph(),
+  },
+  {
+    id: uuid.v4(),
+    title: faker.lorem.words(),
+    image: "https://placeimg.com/640/480/arch",
+    content: faker.lorem.paragraph(),
+  },
+  {
+    id: uuid.v4(),
+    title: faker.lorem.words(),
+    image: "https://placeimg.com/640/480/tech",
+    content: faker.lorem.paragraph(),
+  },
+  {
+    id: uuid.v4(),
+    title: faker.lorem.words(),
+    image: "https://placeimg.com/640/480/sepia",
+    content: faker.lorem.paragraph(),
+  },
 ];
 
-passport.use(new Strategy((token, callback) => {
+passport.use(
+  new Strategy((token, callback) => {
     const user = tokens.get(token);
     if (user === undefined) {
-        return callback(null, false);
+      return callback(null, false);
     }
 
     return callback(null, user);
-}));
-const bearerAuth = passport.authenticate('bearer', { session: false });
+  })
+);
+const bearerAuth = passport.authenticate("bearer", { session: false });
 
-const router = new Router();
-router.post('/auth', async (ctx, next) => {
-    const { login, password } = ctx.request.body;
-
+app.post("/auth", async (req, res) => {
+  try {
+    const { login, password } = req.body;
     const user = users.get(login);
     if (user === undefined) {
-        ctx.response.status = 400;
-        ctx.response.body = { message: 'user not found' };
-        return;
+      return res
+        .status(400)
+        .send(JSON.stringify({ message: "user not found" }));
     }
 
     const result = await bcrypt.compare(password, user.password);
     if (result === false) {
-        ctx.response.status = 400;
-        ctx.response.body = { message: 'invalid password' };
-        return;
+      return res
+        .status(400)
+        .send(JSON.stringify({ message: "invalid password" }));
     }
-
     const token = uuid.v4();
     tokens.set(token, user);
-    ctx.response.body = { token };
+    return res.send(JSON.stringify({ token }));
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(JSON.stringify({ message: "Server internal error" }));
+  }
 });
 
-router.use('/private**', bearerAuth);
-router.get('/private/me', async (ctx, next) => {
-    const { user } = ctx.state;
-    ctx.response.body = { id: user.id, login: user.login, name: user.name, avatar: user.avatar };
+app.use("/private**", bearerAuth);
+app.get("/private/me", async (req, res) => {
+  try {
+    res.send(
+      JSON.stringify({
+        id: req.user.id,
+        login: req.user.login,
+        name: req.user.name,
+        avatar: req.user.avatar,
+      })
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(JSON.stringify({ message: "Server internal error" }));
+  }
 });
-router.get('/private/news', async (ctx, next) => {
-    ctx.response.body = news; 
+app.get("/private/news", async (req, res) => {
+  try {
+    res.send(JSON.stringify(news));
+  } catch (error) {
+    res.status(500).send(JSON.stringify({ message: "Server internal error" }));
+  }
 });
-
-app.use(router.routes())
-app.use(router.allowedMethods());
 
 const port = process.env.PORT || 7070;
-const server = http.createServer(app.callback());
-server.listen(port);
+app.listen(port, () => console.log(`The server is running on port ${port}.`));
