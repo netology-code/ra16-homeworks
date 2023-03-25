@@ -21,7 +21,7 @@ app.get("/notes", (req, res) => {
 });
 
 app.post("/notes", (req, res) => {
-  notes.push({ content: req.body.content, id: nextId++ });
+  notes.push({ ...req.body, id: nextId++ });
   res.status(204);
   res.end();
 });
@@ -37,4 +37,4 @@ app.delete("/notes/:id", (req, res) => {
 });
 
 const port = process.env.PORT || 7070;
-app.listen(port, () => console.log(`The server is running on port ${port}.`));
+app.listen(port, () => console.log(`The server is running on http://localhost:${port}`));
