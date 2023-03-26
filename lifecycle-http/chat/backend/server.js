@@ -12,6 +12,10 @@ app.use(
     },
   })
 );
+app.use(function (req, res, next) {
+  res.setHeader('Content-Type', 'application/json');
+  next();
+});
 
 const messages = [];
 let nextId = 1;

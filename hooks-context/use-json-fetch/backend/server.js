@@ -12,6 +12,10 @@ app.use(
     },
   })
 );
+app.use(function (req, res, next) {
+  res.setHeader("Content-Type", "application/json");
+  next();
+});
 
 app.get("/data", async (req, res) => {
   res.send(JSON.stringify({ status: "ok" }));
