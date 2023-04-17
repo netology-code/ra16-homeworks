@@ -13,7 +13,7 @@ app.use(
   })
 );
 app.use(function (req, res, next) {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader("Content-Type", "application/json");
   next();
 });
 
@@ -36,6 +36,21 @@ app.post("/posts", (req, res) => {
   res.end();
 });
 
+app.put("/posts/:id", (req, res) => {
+  const postId = Number(req.params.id);
+  posts = posts.map((o) => {
+    if (o.id === postId) {
+      return {
+        ...o,
+        ...req.body,
+        id: o.id,
+      };
+    }
+    return o;
+  });
+  res.status(204).end();
+});
+
 app.delete("/posts/:id", (req, res) => {
   const postId = Number(req.params.id);
   const index = posts.findIndex((o) => o.id === postId);
@@ -47,4 +62,6 @@ app.delete("/posts/:id", (req, res) => {
 });
 
 const port = process.env.PORT || 7070;
-app.listen(port, () => console.log(`The server is running on port ${port}.`));
+app.listen(port, () =>
+  console.log(`The server is running on http://localhost:${port}`)
+);
