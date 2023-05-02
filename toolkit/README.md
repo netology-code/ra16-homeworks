@@ -132,7 +132,7 @@
 
 ### Критерии оценки
 
-1. Можно использовать и npm, и Yarn.
+1. Можно использовать любой пакетный менеджер.
 2. Авто-тесты писать не требуется, но можно.
 3. Использован Redux Toolkit.
 4. Асинхронные запросы к API должны быть реализованы через Redux Thunk.
@@ -144,9 +144,8 @@
 Приложение также можно создать используя инструмент Vite.
 Документация по созданию приложения [React](https://vitejs.dev/guide/).
 
-1. Откройте терминал и пропишите следующую команду: `yarn create vite my-app --template react`(
-   npm - `npm create vite@latest my-app --template react`),
-   либо `yarn create vite my-app --template react-ts`(npm - `npm create vite@latest my-app --template react-ts`), если
+1. Откройте терминал и пропишите следующую команду: `yarn create vite my-app --template react`,
+   либо `yarn create vite my-app --template react-ts`, если
    нужен шаблон с TypeScript. Эта команда создаст настроенный
    шаблонный проект.
 2. Откройте созданный проект в своей IDE.
