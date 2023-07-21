@@ -1,0 +1,7 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/bh56359/calend.axacode.ru"
+PassengerBaseURI "/"
+PassengerNodejs "/home/bh56359/nodevenv/calend.axacode.ru/14/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
