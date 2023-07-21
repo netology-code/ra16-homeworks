@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.9379290e.css",
-    "main.js": "/static/js/main.3033b79e.js",
-    "static/js/787.f521a482.chunk.js": "/static/js/787.f521a482.chunk.js",
-    "index.html": "/index.html",
-    "main.9379290e.css.map": "/static/css/main.9379290e.css.map",
-    "main.3033b79e.js.map": "/static/js/main.3033b79e.js.map",
-    "787.f521a482.chunk.js.map": "/static/js/787.f521a482.chunk.js.map"
+    "main.css": "/ra16-homeworks/components/store-calendar-ex/static/css/main.9379290e.css",
+    "main.js": "/ra16-homeworks/components/store-calendar-ex/static/js/main.e876a1aa.js",
+    "static/js/787.f521a482.chunk.js": "/ra16-homeworks/components/store-calendar-ex/static/js/787.f521a482.chunk.js",
+    "index.html": "/ra16-homeworks/components/store-calendar-ex/index.html",
+    "main.9379290e.css.map": "/ra16-homeworks/components/store-calendar-ex/static/css/main.9379290e.css.map",
+    "main.e876a1aa.js.map": "/ra16-homeworks/components/store-calendar-ex/static/js/main.e876a1aa.js.map",
+    "787.f521a482.chunk.js.map": "/ra16-homeworks/components/store-calendar-ex/static/js/787.f521a482.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9379290e.css",
-    "static/js/main.3033b79e.js"
+    "static/js/main.e876a1aa.js"
   ]
 }
