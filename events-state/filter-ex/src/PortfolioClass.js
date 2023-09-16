@@ -17,18 +17,17 @@ class PortfolioClass extends React.Component {
   handleSelectFilter = (e) => {
     this.setState({proj: project.filter((el)=>e===el.category)})
 }
-    handleList = (e) => {this.setState({ e: e })};
+   // handleList = (e) => {this.setState({ e: e })};
   
   render() {
     
     return (
       <div className="container">
         <Toolbar
-          selected={["All", "Websites", "Flayers", "Business Cards"]}
-          filters="All"
+          selected={["All", "Websites", "Flayers", "Business Cards"]} 
           handleSelectFilter={this.handleSelectFilter}
         />
-        <ProjectList id={project.id} img={project.img} state={this.state} handleList={this.handleList} />
+        <ProjectList state={this.state}/>
       </div>
     );
   }

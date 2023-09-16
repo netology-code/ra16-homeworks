@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function ProjectList({ id, img, state, handleList }) {
+function ProjectList({state}) {
   console.log(state);
   function view(){
     if (state.proj.length === 0 ) {
@@ -14,7 +14,7 @@ function ProjectList({ id, img, state, handleList }) {
 }
 
   return (
-    <div className="containerCards" onClick={handleList}>
+    <div className="containerCards">
       {view()}
 </div>
   );
