@@ -78,7 +78,7 @@ my-vite-project/
 │   ├── App.jsx
 │   ├── App.css
 │   └── components/
-│       └── ShopItemFunc.jsx
+│       └── ShopItemClass.jsx
 └── node_modules/
 ```
 
