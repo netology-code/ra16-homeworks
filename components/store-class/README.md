@@ -87,7 +87,7 @@ my-vite-project/
 ### 1. Структура проекта
 
 * [ ] В проекте используется Vite для сборки React-приложения.
-* [ ] В папке `src/components/` лежит файл `ShopItemFunc.jsx`.
+* [ ] В папке `src/components/` лежит файл `ShopItemClass.jsx`.
 * [ ] Все стили проекта находятся в файле `src/App.css`.
 
 ### 2. Компонент ShopItemFunc
