@@ -68,6 +68,7 @@ return (
 
 ## Структура проекта
 
+```
 my-vite-project/
 ├── index.html
 ├── package.json
@@ -79,6 +80,7 @@ my-vite-project/
 │   └── components/
 │       └── ShopItemFunc.jsx
 └── node_modules/
+```
 
 ## Чек-лист самопроверки
 
