@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер фото</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="photo-manager">
+    <div class="upload-area">
+        <div class="upload-text">Click to select</div>
+        <input type="file" class="file-input" multiple accept="image/*" id="fileInput">
+    </div>
+
+    <div class="preview-grid" id="previewGrid">
+        <!-- Placeholder items для демонстрации -->
+        <div class="preview-item placeholder-preview">
+            <div class="placeholder-x">✕</div>
+            <div class="remove-btn">✕</div>
+        </div>
+        <div class="preview-item placeholder-preview">
+            <div class="placeholder-x">✕</div>
+            <div class="remove-btn">✕</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const fileToDataUrl = file => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+
+            fileReader.addEventListener('load', evt => {
+                resolve(evt.currentTarget.result);
+            });
+
+            fileReader.addEventListener('error', evt => {
+                reject(new Error(evt.currentTarget.error));
+            });
+
+            fileReader.readAsDataURL(file);
+        });
+    }
+
+    let images = [];
+
+    const handleSelect = async (evt) => {
+        const files = [...evt.target.files];
+        const urls = await Promise.all(files.map(o => fileToDataUrl(o)));
+
+        urls.forEach(url => {
+            images.push({
+                id: Date.now() + Math.random(),
+                url: url
+            });
+        });
+
+        renderImages();
+        evt.target.value = ''; // Сбрасываем input для возможности повторного выбора тех же файлов
+    }
+
+    const removeImage = (id) => {
+        images = images.filter(img => img.id !== id);
+        renderImages();
+    }
+
+    const renderImages = () => {
+        const previewGrid = document.getElementById('previewGrid');
+        previewGrid.innerHTML = '';
+
+        images.forEach(image => {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'preview-item';
+
+            previewItem.innerHTML = `
+                    <img src="${image.url}" alt="Preview" class="preview-image">
+                    <div class="remove-btn" onclick="removeImage(${image.id})">✕</div>
+                `;
+
+            previewGrid.appendChild(previewItem);
+        });
+    }
+
+    // Инициализация
+    document.getElementById('fileInput').addEventListener('change', handleSelect);
+
+    // Удаляем placeholder элементы при первой загрузке
+    document.addEventListener('DOMContentLoaded', () => {
+        const placeholders = document.querySelectorAll('.placeholder-preview');
+        placeholders.forEach(placeholder => {
+            placeholder.style.display = 'none';
+        });
+    });
+</script>
+</body>
+</html>

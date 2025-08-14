@@ -27,21 +27,21 @@
 
 ```jsx
 function UserProfile() {
-  const user = {
-    name: 'Vasya',
-    status: 'React Developer',
-    avatar: 'https://dummyimage.com/200x100',
-  };
-  
-  return (
-    <div className="card">
-      <img src={user.avatar} className="card-img-top" />
-      <div className="card-body">
-        <h5 className="card-title">{user.name}</h5>
-        <p className="card-text">{user.status}</p>
-      </div>
-    </div>
-  );
+    const user = {
+        name: 'Vasya',
+        status: 'React Developer',
+        avatar: 'https://dummyimage.com/200x100',
+    };
+
+    return (
+        <div className="card">
+            <img src={user.avatar} className="card-img-top" />
+            <div className="card-body">
+                <h5 className="card-title">{user.name}</h5>
+                <p className="card-text">{user.status}</p>
+            </div>
+        </div>
+    );
 }
 ```
 
@@ -49,27 +49,27 @@ function UserProfile() {
 
 ```jsx
 function App() {
-  const user = {
-    name: 'Vasya',
-    status: 'React Developer',
-    avatar: 'https://dummyimage.com/200x100',
-  };
+    const user = {
+        name: 'Vasya',
+        status: 'React Developer',
+        avatar: 'https://dummyimage.com/200x100',
+    };
 
-  return <UserProfile user={user} />;
+    return <UserProfile user={user} />;
 }
 
 function UserProfile(props) {
-  const { user } = props;
-  
-  return (
-    <div className="card">
-      <img src={user.avatar} className="card-img-top" />
-      <div className="card-body">
-        <h5 className="card-title">{user.name}</h5>
-        <p className="card-text">{user.status}</p>
-      </div>
-    </div>
-  );
+    const { user } = props;
+
+    return (
+        <div className="card">
+            <img src={user.avatar} className="card-img-top" />
+            <div className="card-body">
+                <h5 className="card-title">{user.name}</h5>
+                <p className="card-text">{user.status}</p>
+            </div>
+        </div>
+    );
 }
 ```
 
@@ -85,33 +85,33 @@ function UserProfile(props) {
 ```jsx
 // Передача различных типов данных через props
 function UserCard({ name, age, isActive, hobbies, onClick }) {
-  return (
-    <div className="user-card" onClick={onClick}>
-      <h2>{name}</h2>
-      <p>Возраст: {age}</p>
-      <p>Статус: {isActive ? 'Активен' : 'Неактивен'}</p>
-      <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>{hobby}</li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="user-card" onClick={onClick}>
+            <h2>{name}</h2>
+            <p>Возраст: {age}</p>
+            <p>Статус: {isActive ? 'Активен' : 'Неактивен'}</p>
+            <ul>
+                {hobbies.map((hobby, index) => (
+                    <li key={index}>{hobby}</li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 // Использование
 function App() {
-  const handleClick = () => console.log('Карточка нажата');
-  
-  return (
-    <UserCard 
-      name="Иван"
-      age={25}
-      isActive={true}
-      hobbies={['React', 'TypeScript', 'Node.js']}
-      onClick={handleClick}
-    />
-  );
+    const handleClick = () => console.log('Карточка нажата');
+
+    return (
+        <UserCard
+            name="Иван"
+            age={25}
+            isActive={true}
+            hobbies={['React', 'TypeScript', 'Node.js']}
+            onClick={handleClick}
+        />
+    );
 }
 ```
 
@@ -141,9 +141,9 @@ let strings: Array<string> = ['a', 'b', 'c'];
 
 // Объекты
 interface User {
-  id: number;
-  name: string;
-  email?: string; // опциональное свойство
+    id: number;
+    name: string;
+    email?: string; // опциональное свойство
 }
 ```
 
@@ -152,7 +152,7 @@ interface User {
 ```tsx
 // Обычная функция
 function add(a: number, b: number): number {
-  return a + b;
+    return a + b;
 }
 
 // Стрелочная функция
@@ -160,10 +160,10 @@ const multiply = (a: number, b: number): number => a * b;
 
 // Функция с callback
 function processData(
-  data: string,
-  callback: (result: string) => void
+    data: string,
+    callback: (result: string) => void
 ): void {
-  callback(data.toUpperCase());
+    callback(data.toUpperCase());
 }
 ```
 
@@ -172,28 +172,28 @@ function processData(
 ```tsx
 // Интерфейс для props
 interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-  variant?: 'primary' | 'secondary'; // Union type
+    label: string;
+    onClick: () => void;
+    disabled?: boolean;
+    variant?: 'primary' | 'secondary'; // Union type
 }
 
 // Функциональный компонент
-const Button = ({ 
-  label, 
-  onClick, 
-  disabled = false,
-  variant = 'primary' 
-}: ButtonProps) => {
-  return (
-    <button 
-      onClick={onClick} 
-      disabled={disabled}
-      className={`btn btn-${variant}`}
-    >
-      {label}
-    </button>
-  );
+const Button = ({
+                    label,
+                    onClick,
+                    disabled = false,
+                    variant = 'primary'
+                }: ButtonProps) => {
+    return (
+        <button
+            onClick={onClick}
+            disabled={disabled}
+            className={`btn btn-${variant}`}
+        >
+            {label}
+        </button>
+    );
 };
 ```
 
@@ -203,21 +203,21 @@ const Button = ({
 import { useState } from 'react';
 
 function Counter() {
-  // Автоматический вывод типа
-  const [count, setCount] = useState(0);
-  
-  // Явное указание типа
-  const [user, setUser] = useState<User | null>(null);
-  
-  // Массив объектов
-  const [items, setItems] = useState<string[]>([]);
-  
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>+</button>
-    </div>
-  );
+    // Автоматический вывод типа
+    const [count, setCount] = useState(0);
+
+    // Явное указание типа
+    const [user, setUser] = useState<User | null>(null);
+
+    // Массив объектов
+    const [items, setItems] = useState<string[]>([]);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>+</button>
+        </div>
+    );
 }
 ```
 
@@ -226,24 +226,24 @@ function Counter() {
 ```tsx
 // Generic компонент для списка
 interface ListProps<T> {
-  items: T[];
-  renderItem: (item: T) => React.ReactNode;
+    items: T[];
+    renderItem: (item: T) => React.ReactNode;
 }
 
 function List<T>({ items, renderItem }: ListProps<T>) {
-  return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={index}>{renderItem(item)}</li>
-      ))}
-    </ul>
-  );
+    return (
+        <ul>
+            {items.map((item, index) => (
+                <li key={index}>{renderItem(item)}</li>
+            ))}
+        </ul>
+    );
 }
 
 // Использование
-<List 
-  items={[1, 2, 3]} 
-  renderItem={(num) => <span>{num * 2}</span>} 
+<List
+    items={[1, 2, 3]}
+    renderItem={(num) => <span>{num * 2}</span>}
 />
 ```
 
@@ -289,22 +289,22 @@ React рекомендует использовать значения по ум
 
 ```tsx
 interface UserInfoProps {
-  name?: string;
-  img?: string;
+    name?: string;
+    img?: string;
 }
 
 function UserInfo({
-  name,
-  img = 'https://dummyimage.com/100x100/000/ffffff&text=default'
-}: UserInfoProps) {
-  return (
-    <div className="card">
-      <img src={img} className="card-img-top" alt="User avatar" />
-      <div className="card-body">
-        <h6 className="card-title">{name || 'Гость'}</h6>
-      </div>
-    </div>
-  );
+                      name,
+                      img = 'https://dummyimage.com/100x100/000/ffffff&text=default'
+                  }: UserInfoProps) {
+    return (
+        <div className="card">
+            <img src={img} className="card-img-top" alt="User avatar" />
+            <div className="card-body">
+                <h6 className="card-title">{name || 'Гость'}</h6>
+            </div>
+        </div>
+    );
 }
 ```
 
@@ -312,29 +312,29 @@ function UserInfo({
 
 ```tsx
 interface ButtonProps {
-  label: string;
-  primary?: boolean;
-  disabled?: boolean;
-  large?: boolean;
+    label: string;
+    primary?: boolean;
+    disabled?: boolean;
+    large?: boolean;
 }
 
-function Button({ 
-  label, 
-  primary = false, 
-  disabled = false,
-  large = false 
-}: ButtonProps) {
-  const classNames = [
-    'btn',
-    primary && 'btn-primary',
-    large && 'btn-large'
-  ].filter(Boolean).join(' ');
-  
-  return (
-    <button className={classNames} disabled={disabled}>
-      {label}
-    </button>
-  );
+function Button({
+                    label,
+                    primary = false,
+                    disabled = false,
+                    large = false
+                }: ButtonProps) {
+    const classNames = [
+        'btn',
+        primary && 'btn-primary',
+        large && 'btn-large'
+    ].filter(Boolean).join(' ');
+
+    return (
+        <button className={classNames} disabled={disabled}>
+            {label}
+        </button>
+    );
 }
 
 // Использование
@@ -354,24 +354,24 @@ function Button({
 
 ```tsx
 interface ProductCardProps {
-  title: string;
-  price: number;
-  imageUrl: string;
-  onAddToCart: () => void;
+    title: string;
+    price: number;
+    imageUrl: string;
+    onAddToCart: () => void;
 }
 
-const ProductCard = ({ 
-  title, 
-  price, 
-  imageUrl, 
-  onAddToCart 
-}: ProductCardProps) => (
-  <div className="product-card">
-    <img src={imageUrl} alt={title} />
-    <h3>{title}</h3>
-    <p>{price} ₽</p>
-    <button onClick={onAddToCart}>В корзину</button>
-  </div>
+const ProductCard = ({
+                         title,
+                         price,
+                         imageUrl,
+                         onAddToCart
+                     }: ProductCardProps) => (
+    <div className="product-card">
+        <img src={imageUrl} alt={title} />
+        <h3>{title}</h3>
+        <p>{price} ₽</p>
+        <button onClick={onAddToCart}>В корзину</button>
+    </div>
 );
 ```
 
@@ -387,36 +387,36 @@ const ProductCard = ({
 
 ```tsx
 const ProductListContainer = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    fetchProducts().then(data => {
-      setProducts(data);
-      setLoading(false);
-    });
-  }, []);
-  
-  const handleAddToCart = (productId: number) => {
-    // Логика добавления в корзину
-    console.log(`Добавлен товар ${productId}`);
-  };
-  
-  if (loading) return <div>Загрузка...</div>;
-  
-  return (
-    <div className="product-list">
-      {products.map(product => (
-        <ProductCard
-          key={product.id}
-          title={product.title}
-          price={product.price}
-          imageUrl={product.imageUrl}
-          onAddToCart={() => handleAddToCart(product.id)}
-        />
-      ))}
-    </div>
-  );
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchProducts().then(data => {
+            setProducts(data);
+            setLoading(false);
+        });
+    }, []);
+
+    const handleAddToCart = (productId: number) => {
+        // Логика добавления в корзину
+        console.log(`Добавлен товар ${productId}`);
+    };
+
+    if (loading) return <div>Загрузка...</div>;
+
+    return (
+        <div className="product-list">
+            {products.map(product => (
+                <ProductCard
+                    key={product.id}
+                    title={product.title}
+                    price={product.price}
+                    imageUrl={product.imageUrl}
+                    onAddToCart={() => handleAddToCart(product.id)}
+                />
+            ))}
+        </div>
+    );
 };
 ```
 
@@ -430,17 +430,17 @@ const ProductListContainer = () => {
 
 ```tsx
 const users = [
-  { id: 'u123', name: 'Ларичев Иван' },
-  { id: 'u456', name: 'Морозов Алексей' },
-  { id: 'u789', name: 'Бурмистров Роман' }
+    { id: 'u123', name: 'Ларичев Иван' },
+    { id: 'u456', name: 'Морозов Алексей' },
+    { id: 'u789', name: 'Бурмистров Роман' }
 ];
 
 return (
-  <ul>
-    {users.map(user => (
-      <li key={user.id}>{user.name}</li>
-    ))}
-  </ul>
+    <ul>
+        {users.map(user => (
+            <li key={user.id}>{user.name}</li>
+        ))}
+    </ul>
 );
 ```
 
@@ -472,36 +472,36 @@ items.map((item, index) => <Item key={index} {...item} />)
 
 ```tsx
 interface Todo {
-  id: string;
-  text: string;
-  completed: boolean;
+    id: string;
+    text: string;
+    completed: boolean;
 }
 
 function TodoList() {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: '1', text: 'Изучить React', completed: false },
-    { id: '2', text: 'Написать компонент', completed: true },
-    { id: '3', text: 'Протестировать код', completed: false }
-  ]);
-  
-  return (
-    <ul>
-      {todos.map(todo => (
-        <TodoItem 
-          key={todo.id}  // Используем стабильный id
-          todo={todo}
-        />
-      ))}
-    </ul>
-  );
+    const [todos, setTodos] = useState<Todo[]>([
+        { id: '1', text: 'Изучить React', completed: false },
+        { id: '2', text: 'Написать компонент', completed: true },
+        { id: '3', text: 'Протестировать код', completed: false }
+    ]);
+
+    return (
+        <ul>
+            {todos.map(todo => (
+                <TodoItem
+                    key={todo.id}  // Используем стабильный id
+                    todo={todo}
+                />
+            ))}
+        </ul>
+    );
 }
 
 function TodoItem({ todo }: { todo: Todo }) {
-  return (
-    <li style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-      {todo.text}
-    </li>
-  );
+    return (
+        <li style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+            {todo.text}
+        </li>
+    );
 }
 ```
 
@@ -516,9 +516,9 @@ function TodoItem({ todo }: { todo: Todo }) {
 ```typescript
 // types/PurchaseType.ts
 export type PurchaseModel = {
-  id: number;
-  name: string;
-  done?: boolean;
+    id: number;
+    name: string;
+    done?: boolean;
 };
 ```
 
@@ -527,28 +527,28 @@ export type PurchaseModel = {
 ```tsx
 // components/PurchaseItem.tsx
 interface PurchaseItemProps {
-  item: PurchaseModel;
-  onToggle: (id: number) => void;
-  onRemove: (id: number) => void;
+    item: PurchaseModel;
+    onToggle: (id: number) => void;
+    onRemove: (id: number) => void;
 }
 
 function PurchaseItem({ item, onToggle, onRemove }: PurchaseItemProps) {
-  const { id, name, done } = item;
-  
-  const handleToggle = () => onToggle(id);
-  const handleRemove = () => onRemove(id);
-  
-  return (
-    <li>
+    const { id, name, done } = item;
+
+    const handleToggle = () => onToggle(id);
+    const handleRemove = () => onRemove(id);
+
+    return (
+        <li>
       <span style={{ textDecoration: done ? 'line-through' : 'none' }}>
         {name}
       </span>
-      <button onClick={handleToggle}>
-        {done ? 'Отменить' : 'Купить'}
-      </button>
-      <button onClick={handleRemove}>Удалить</button>
-    </li>
-  );
+            <button onClick={handleToggle}>
+                {done ? 'Отменить' : 'Купить'}
+            </button>
+            <button onClick={handleRemove}>Удалить</button>
+        </li>
+    );
 }
 ```
 
@@ -559,40 +559,40 @@ function PurchaseItem({ item, onToggle, onRemove }: PurchaseItemProps) {
 import { useState } from 'react';
 
 function PurchaseList() {
-  const [items, setItems] = useState<PurchaseModel[]>([
-    { id: 1, name: 'Молоко', done: false },
-    { id: 2, name: 'Хлеб', done: false },
-    { id: 3, name: 'Яйца', done: true }
-  ]);
-  
-  const onItemToggle = (id: number) => {
-    setItems(prevItems => 
-      prevItems.map(item => 
-        item.id === id 
-          ? { ...item, done: !item.done }
-          : item
-      )
+    const [items, setItems] = useState<PurchaseModel[]>([
+        { id: 1, name: 'Молоко', done: false },
+        { id: 2, name: 'Хлеб', done: false },
+        { id: 3, name: 'Яйца', done: true }
+    ]);
+
+    const onItemToggle = (id: number) => {
+        setItems(prevItems =>
+            prevItems.map(item =>
+                item.id === id
+                    ? { ...item, done: !item.done }
+                    : item
+            )
+        );
+    };
+
+    const onItemRemove = (id: number) => {
+        setItems(prevItems =>
+            prevItems.filter(item => item.id !== id)
+        );
+    };
+
+    return (
+        <ul>
+            {items.map(item => (
+                <PurchaseItem
+                    key={item.id}
+                    item={item}
+                    onToggle={onItemToggle}
+                    onRemove={onItemRemove}
+                />
+            ))}
+        </ul>
     );
-  };
-  
-  const onItemRemove = (id: number) => {
-    setItems(prevItems => 
-      prevItems.filter(item => item.id !== id)
-    );
-  };
-  
-  return (
-    <ul>
-      {items.map(item => (
-        <PurchaseItem
-          key={item.id}
-          item={item}
-          onToggle={onItemToggle}
-          onRemove={onItemRemove}
-        />
-      ))}
-    </ul>
-  );
 }
 ```
 
