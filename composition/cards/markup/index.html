@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Карточки - Примеры</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-5 text-center">Примеры Bootstrap 5 карточек</h1>
+        
+        <div class="row g-4">
+            <!-- Карточка с изображением -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/0d6efd/ffffff?text=Card+Image" class="card-img-top" alt="Пример изображения">
+                    <div class="card-body">
+                        <h5 class="card-title">Заголовок карточки</h5>
+                        <p class="card-text">Это пример текста карточки. Здесь можно разместить описание или любую другую информацию.</p>
+                        <a href="#" class="btn btn-primary">Перейти</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка только с текстом -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Текстовая карточка</h5>
+                        <p class="card-text">Пример карточки без изображения, содержащей только текстовое содержимое.</p>
+                        <a href="#" class="btn btn-outline-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка с заголовком и футером -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Заголовок
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Особая карточка</h5>
+                        <p class="card-text">Карточка с заголовком и нижним колонтитулом.</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 дня назад
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка с цветным фоном -->
+            <div class="col-md-4">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Цветная карточка</h5>
+                        <p class="card-text">Пример карточки с цветным фоном и белым текстом.</p>
+                        <a href="#" class="btn btn-light">Действие</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Горизонтальная карточка -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/200x250/198754/ffffff?text=Image" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Горизонтальная карточка</h5>
+                                <p class="card-text">Это более широкая карточка с поддерживающим текстом ниже как естественный переход к дополнительному содержимому.</p>
+                                <p class="card-text"><small class="text-muted">Последнее обновление 3 минуты назад</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Группа карточек -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="mb-4">Группа карточек</h2>
+                <div class="card-group">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Card+1" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Карточка 1</h5>
+                            <p class="card-text">Это карточка с поддерживающим текстом ниже как естественный переход к дополнительному содержимому.</p>
+                            <p class="card-text"><small class="text-muted">Последнее обновление 3 минуты назад</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200/dc3545/ffffff?text=Card+2" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Карточка 2</h5>
+                            <p class="card-text">Эта карточка имеет поддерживающий текст ниже как естественный переход к дополнительному содержимому.</p>
+                            <p class="card-text"><small class="text-muted">Последнее обновление 3 минуты назад</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200/fd7e14/ffffff?text=Card+3" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Карточка 3</h5>
+                            <p class="card-text">Это более широкая карточка с поддерживающим текстом ниже как естественный переход к дополнительному содержимому. Эта карточка имеет еще более длинный контент, чем первые две карточки.</p>
+                            <p class="card-text"><small class="text-muted">Последнее обновление 3 минуты назад</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
