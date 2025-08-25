@@ -1,34 +1,55 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { ModalEvolutionDemo } from './components/ModalEvolution'
+import { TypeScriptDemo } from './components/TypeScriptExamples'
+import { PropsForwardingDemo } from './components/PropsForwarding'
+import { SidebarDemo } from './components/SidebarExample'
+import { AdvancedPatternsDemo } from './components/AdvancedPatterns'
+import { PracticalExamplesDemo } from './components/PracticalExamples'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeDemo, setActiveDemo] = useState<string>('modal-evolution')
+
+  const demos = [
+    { key: 'modal-evolution', title: '1. Эволюция компонента Modal', component: <ModalEvolutionDemo /> },
+    { key: 'typescript', title: '2. Типизация children в TypeScript', component: <TypeScriptDemo /> },
+    { key: 'props-forwarding', title: '3. Props Forwarding', component: <PropsForwardingDemo /> },
+    { key: 'sidebar', title: '4. Sidebar с виджетами (SRP)', component: <SidebarDemo /> },
+    { key: 'advanced', title: '5. Продвинутые паттерны', component: <AdvancedPatternsDemo /> },
+    { key: 'practical', title: '6. Практические примеры', component: <PracticalExamplesDemo /> }
+  ]
+
+  const currentDemo = demos.find(demo => demo.key === activeDemo)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="app">
+      <header className="app-header">
+        <h1>Композиция компонентов в React</h1>
+        <p className="subtitle">Примеры кода</p>
+      </header>
+
+      <nav className="demo-nav">
+        {demos.map(demo => (
+          <button
+            key={demo.key}
+            className={`nav-button ${activeDemo === demo.key ? 'active' : ''}`}
+            onClick={() => setActiveDemo(demo.key)}
+          >
+            {demo.title}
+          </button>
+        ))}
+      </nav>
+
+      <main className="demo-content">
+        {currentDemo?.component}
+      </main>
+
+      <footer className="app-footer">
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Эти примеры созданы для курса по react в netology.ru
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </footer>
+    </div>
   )
 }
 
