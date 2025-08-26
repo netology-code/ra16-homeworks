@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat History - Markup Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-history">
+            <!-- Response message (from another user) -->
+            <div class="message-item message-response">
+                <div class="message-header">
+                    <span class="message-author">Ольга</span>
+                    <span class="message-time">10:10</span>
+                </div>
+                <div class="message-bubble">
+                    Привет, Виктор. Как дела? Как идёт работа над проектом?
+                </div>
+            </div>
+
+            <!-- Own message (from current user) -->
+            <div class="message-item message-own">
+                <div class="message-header">
+                    <span class="message-author">Виктор</span>
+                    <span class="message-time">10:12</span>
+                </div>
+                <div class="message-bubble">
+                    Привет. Давай сегодня созвонимся. Проект практически готов, и у меня есть что показать.
+                </div>
+            </div>
+
+            <!-- Response message (from another user) -->
+            <div class="message-item message-response">
+                <div class="message-header">
+                    <span class="message-author">Ольга</span>
+                    <span class="message-time">10:14</span>
+                </div>
+                <div class="message-bubble">
+                    Не уверена, что сегодня получится. Всё ещё в офисе. Давай уточню через час. Возникли ли какие-либо проблемы на последней стадии проекта?
+                </div>
+            </div>
+
+            <!-- Own message (from current user) -->
+            <div class="message-item message-own">
+                <div class="message-header">
+                    <span class="message-author">Виктор</span>
+                    <span class="message-time">10:20</span>
+                </div>
+                <div class="message-bubble">
+                    Нет, всё прошло гладко. Очень хочу показать всё команде.
+                </div>
+            </div>
+
+            <!-- Typing indicator -->
+            <div class="message-item message-typing">
+                <div class="message-header">
+                    <span class="message-author">Виктор</span>
+                    <span class="message-time">10:31</span>
+                </div>
+                <div class="typing-indicator">
+                    <span>печатает...</span>
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

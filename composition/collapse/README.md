@@ -1,7 +1,9 @@
 Collapse
 ===
 
-Вам поручено реализовать аналог компонента [Collapse](https://getbootstrap.com/docs/5.0/components/collapse/#example).
+Вам поручено реализовать аналог компонента [Collapse](https://getbootstrap.com/docs/5.3/components/collapse/#example).
+
+Стили и пример разметки вы можете найти в папке [markup](./markup). Разметка дана для примера, вы можете реализовать её самостоятельно.
 
 Используйте следующие props:
 * `collapsedLabel`,
