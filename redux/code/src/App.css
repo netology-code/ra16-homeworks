@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+ul li {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+ul li button {
+    margin-right: 1em;
+}
