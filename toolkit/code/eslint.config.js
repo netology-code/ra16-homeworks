@@ -6,6 +6,7 @@ import reactHooksPlugin from "eslint-plugin-react-hooks"
 import globals from "globals"
 import { config, configs } from "typescript-eslint"
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 const eslintConfig = config(
   {
     name: "global-ignores",
